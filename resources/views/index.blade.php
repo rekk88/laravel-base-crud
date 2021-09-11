@@ -2,6 +2,6 @@
 
 @section('main')
 
-<div>index sample text</div>
+<div class="text-center">index sample text</div>
 
 @endsection
