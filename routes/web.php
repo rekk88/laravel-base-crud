@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('/home','ComicsController'); //crea in automatico tutte le rotte per ComicsController
