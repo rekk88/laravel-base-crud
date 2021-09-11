@@ -16,9 +16,11 @@
       <tr>
         <th scope="row">{{$fumetto->id}}</th>
         <td>{{$fumetto->title}} </td>
-        <td>$ {{$fumetto->price}}</td>
+        <td> {{$fumetto->price}}</td>
         <td>
-          <a href="" class="btn btn-primary">Show</a>
+          <!-- nei ref devo mettere la route name che vedo in console con
+               php artisan route list-->
+          <a href="{{ route('home.show' , [$fumetto->id]) }}" class="btn btn-primary">Show</a>
           <a href="" class="btn btn-success">Edit</a>
           <a href="" class="btn btn-danger">Delete</a>
         </td>
