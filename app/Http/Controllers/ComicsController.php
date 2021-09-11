@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Comic;
 
 class ComicsController extends Controller
 {
@@ -13,7 +14,12 @@ class ComicsController extends Controller
      */
     public function index()
     {
-        return view('index');
+      $fumetti = Comic::all();
+      // $fumetti = Comic::paginate(6); //visualizzazione per pagine con 6 elementi in questo caso
+      // {{$fumetti->links()}} da aggiungere in index.blade per poter selezionare le pagine
+      
+      // dd($fumetti);
+      return view('index',compact('fumetti'));
     }
 
     /**
