@@ -27,6 +27,7 @@ class ComicsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // funtcion per l'inserimento di dati
     public function create()
     {
         return view('create');
@@ -40,8 +41,18 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+      $data = $request->all();
+
+      $newComic = new Comic();
+
+
+      $newComic->fill($data);
+      $newComic->save();
+
+      return redirect()->route('home.show' , $newComic->id);
     }
+
 
     /**
      * Display the specified resource.

@@ -2,7 +2,7 @@
 
 @section('main')
 
-<table class="table table-dark">
+<table class="table table-dark m-0 p-0">
   <thead>
     <tr>
       <th scope="col">#</th>
