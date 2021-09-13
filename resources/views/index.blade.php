@@ -20,9 +20,9 @@
         <td>
           <!-- nei ref devo mettere la route name che vedo in console con
                php artisan route list-->
-          <a href="{{ route('home.show' , [$fumetto->id]) }}" class="btn btn-primary">Show</a>
-          <a href="{{ route('home.edit' , [$fumetto->id]) }}" class="btn btn-success">Edit</a>
-          <form action="{{ route('home.destroy' , [$fumetto->id]) }}" class="d-inline-block">
+          <a href="{{ route('comic.show' , [$fumetto->id]) }}" class="btn btn-primary">Show</a>
+          <a href="{{ route('comic.edit' , [$fumetto->id]) }}" class="btn btn-success">Edit</a>
+          <form method="POST" action="{{ route('comic.destroy' , [$fumetto->id]) }}" class="d-inline-block">
             @csrf
             @method('DELETE')
             <input type="submit" value="delete" class="btn btn-danger">

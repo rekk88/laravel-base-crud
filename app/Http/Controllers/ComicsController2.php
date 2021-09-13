@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Comic;
 
-class ComicsController extends Controller
+class ComicsController2 extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +13,7 @@ class ComicsController extends Controller
      */
     public function index()
     {
-      $fumetti = Comic::all();
-      // $fumetti = Comic::paginate(6); //visualizzazione per pagine con 6 elementi in questo caso
-      // {{$fumetti->links()}} da aggiungere in index.blade per poter selezionare le pagine
-      
-      // dd($fumetti);
-      return view('index',compact('fumetti'));
+        //
     }
 
     /**
@@ -27,10 +21,9 @@ class ComicsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // funtcion per l'inserimento di dati
     public function create()
     {
-        return view('create');
+        //
     }
 
     /**
@@ -41,18 +34,8 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-      $data = $request->all();
-
-      $newComic = new Comic();
-
-
-      $newComic->fill($data);
-      $newComic->save();
-
-      return redirect()->route('home.show' , $newComic->id);
+        //
     }
-
 
     /**
      * Display the specified resource.
@@ -62,9 +45,7 @@ class ComicsController extends Controller
      */
     public function show($id)
     {
-        $f = Comic::find($id);
-        // dd($f);
-        return view('show',compact('f'));
+        //
     }
 
     /**
@@ -75,8 +56,7 @@ class ComicsController extends Controller
      */
     public function edit($id)
     {
-        $comic = Comic::find($id);
-        return view('edit',compact('comic'));
+        //
     }
 
     /**
@@ -86,14 +66,9 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(Request $request, $id)
     {
-        // dd($request->all());
-        $data = $request->all();
-
-        $comic->update($data);
-        // $comic = Comic::find($id);
-        return redirect()->route('comic.index');
+        //
     }
 
     /**
@@ -102,10 +77,8 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comic $comic)
+    public function destroy($id)
     {
-        $comic->delete();
-
-        return redirect()->route('comic.index');
+        //
     }
 }

@@ -2,7 +2,7 @@
 
 @section('main')
 
-<form class="row g-3" action="{{route('home.store')}}" method="post">
+<form class="row g-3" action="{{route('comic.store')}}" method="post">
   @csrf
   <!-- title -->
   <div class="col-md-6">

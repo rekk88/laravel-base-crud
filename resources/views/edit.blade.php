@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('main')
-<form class="row g-3" action="{{ route('home.update' , [$comic->id]) }}" method="post">
+<form class="row g-3" action="{{ route('comic.update' , [$comic->id]) }}" method="post">
   @csrf
   @method('PUT')
   <!-- title -->

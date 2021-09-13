@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/home','ComicsController'); //crea in automatico tutte le rotte per ComicsController
+Route::resource('/comic','ComicsController'); //crea in automatico tutte le rotte per ComicsController
