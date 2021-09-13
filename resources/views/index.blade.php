@@ -21,8 +21,12 @@
           <!-- nei ref devo mettere la route name che vedo in console con
                php artisan route list-->
           <a href="{{ route('home.show' , [$fumetto->id]) }}" class="btn btn-primary">Show</a>
-          <a href="" class="btn btn-success">Edit</a>
-          <a href="" class="btn btn-danger">Delete</a>
+          <a href="{{ route('home.edit' , [$fumetto->id]) }}" class="btn btn-success">Edit</a>
+          <form action="{{ route('home.destroy' , [$fumetto->id]) }}" class="d-inline-block">
+            @csrf
+            @method('DELETE')
+            <input type="submit" value="delete" class="btn btn-danger">
+          </form>
         </td>
       </tr>
     @endforeach
